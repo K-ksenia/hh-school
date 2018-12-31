@@ -1,53 +1,208 @@
 /* Modal */
 
+@font-face {
+    font-family: Montserrat;
+    src: local("Montserrat-Bold"),
+	       url(./Montserrat-Bold.ttf);
+
+}
+
+@font-face {
+    font-family: Poppins;
+    src: local("Poppins-Regular"),
+        url(./Poppins-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: url(./main-background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 .modal-wrapper {
-  background: rgba(0, 173, 95, 0.8);
-  background: linear-gradient(180deg, #0e81d6, rgba(0, 173, 95, 0.8));
+    background: rgba(0, 173, 95, 0.8);
+    background: linear-gradient(180deg, #0e81d6, rgba(0, 173, 95, 0.8));
+    background-attachment: fixed;
+    height: max-content;
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 15px;
 }
 
 .modal {
-
+    width: 1120px;
+    background: #fff;
+    display: flex;
+    margin: auto;
 }
 
 .contact-info {
-  flex-grow: 1;
-  padding: 30px 15px 0 15px;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    padding: 30px 15px 0 15px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
 .contact-info-item {
-  margin-bottom: 45px;
-  width: 355px;
-  max-width: 100%;
+    margin-bottom: 45px;
+    width: 355px;
+    max-width: 100%;
+    display: flex;
 }
 
 .contact-info-item:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-item__icon {
+    margin-right: 25px;
 }
 
 .contact-info-item__title {
-  color: #fff;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .contact-info-item__text {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #999;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #999;
 }
 
 .contact-info-item__link {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #00ad5f;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #00ad5f;
 }
 
 .contact-form {
-  flex-grow: 1;
-  height: 500px;
+    padding: 55px;
 }
 
+.contact-form-title {
+    margin-bottom: 60px;
+    color: #333;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.contact-form-item {
+    margin-bottom: 35px;
+}
+
+.contact-form-item:last-child {
+    margin-bottom: 23px;
+}
+
+.contact-form-item__label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+.contact-form-item__modal-input {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form-item__input {
+    height: 55px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 2px;
+    border: 1px solid #dedede;
+    padding: 25px;
+    outline-style: solid;
+    outline-color: transparent;
+    outline-offset: 15px;
+    transition-duration: 0.4s;
+    transition-property: outline-offset;
+}
+
+.contact-form-button {
+    font-family: Montserrat, sans-serif;
+    height: 50px;
+    width: 225px;
+    font-size: 12px;
+    background: #00ad5f;
+    color: #fff;
+    border-radius: 2px;
+    border: 0;
+    outline: none;
+}
+
+.contact-form-item__input:focus {
+    outline-color: #00ad5f;
+    outline-offset: -1px;
+    outline-width: 1px;
+    border-color: transparent;
+}
+
+
+@media (max-width: 992px) {
+    .modal {
+        width: auto;
+    }
+
+    .modal-wrapper {
+        height: max-content;
+    }
+
+    .contact-form {
+        width: 60%;
+    }
+
+    .contact-info {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal {
+        flex-direction: column-reverse;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-form {
+        padding: 55px 30px;
+    }
+
+    .contact-info-item:last-child {
+        margin-bottom: 55px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form {
+        padding: 55px 15px;
+    }
+
+    .contact-form-item__modal-input {
+        flex-direction: column;
+    }
+}
